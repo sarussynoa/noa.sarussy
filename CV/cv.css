@@ -1,0 +1,59 @@
+* {
+    background-color: white;
+    box-sizing: border-box;
+}
+
+html,
+body {
+   height: 100%;
+   margin: 10px;
+}
+
+.grid-container {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    grid-gap: 20px 20px;
+}
+
+.header, .contact-me, .objective, .education, .professional-experience {
+  border: 1px solid black;
+  padding: 15px;
+  row-gap: 20px;
+}
+
+.year-1, .year-2 {
+  width: 25%;
+  float: left;
+  border: 1px solid black;
+  padding: 15px;
+  height: 20%;
+}
+
+.job-1, .job-2 {
+  width: 75%;
+  float: left;
+  border: 1px solid black;
+  padding: 15px;
+  height: 20%;
+}
+
+.asterisk {
+  list-style-type: '* ';
+}
+
+.skills-and-capabilities {
+  border: 1px solid black;
+  padding: 15px;
+  height: 25%;
+}
+
+.header, .contact-me, .professional-experience {
+    height: 5%
+}
+
+.objective, .education {
+    height: 10%
+}
