@@ -2,9 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>טופס משלוח</title>
+    <link rel="stylesheet" href="shop.css">
 </head>
 <body>
+<div class="grid-container">
+    <div class="left-bar">
+        <p>
+            <a>התחברות</a>
+        </p>
+        <hr>
+        <p>
+            <a href="register.html">הרשמה</a>
+        </p>
+        <hr>
+        <p>
+            <a href="cart.html">סל קניות</a>
+        </p>
+        <hr>
+        <p>
+            <a>מועדפים</a>
+        </p>
+    </div>
+    <div class="navigation-bar">
+        <ul>
+            <li><a href="packages.html">מארזים להכנה ביתית</a></li>
+            <li><a href="menu.html">תפריט</a></li>
+            <li><a href="about.html">מי אנחנו</a></li>
+            <li><a href="index.html">עמוד הבית</a></li>
+        </ul>
+    </div>
+    <div class="right-bar">
+        <div class="right-bar-box">חיפוש באתר...</div>
+    </div>
+    <div class="content">
+        <div class="content-box scrolling-box">
+            <form action="#">
+                <div>
+                    <p><b>טופס משלוח</b></p>
+                    <hr>
+                    <label for="phone"><b>מספר טלפון</b></label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                    <br>
+                    <label for="adr"><b>כתובת</b></label>
+                    <input type="text" id="adr" name="address" placeholder="הכנס כתובת">
+                    <br>
+                    <label for="city"><b>עיר מגורים</b></label>
+                    <input type="text" id="city" name="city" placeholder="הכנס עיר מגורים">
+                    <hr>
 
+                    <button type="submit" class="registerbtn">שלח</button>
+                </div>
+            </form>
+    </div>
+    </div>
+</div>
 </body>
 </html>
