@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+   height: 100%;
+   margin: 10px;
+}
+
+.grid-container {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    grid-gap: 20px 20px;
+}
+
+.navigation-bar{
+    padding: 15px;
+    float: left;
+    border: 1px solid black;
+    width: 50%;
+    margin-left: 25%
+}
+.content{
+    padding: 15px;
+    float: left;
+    border: 1px solid black;
+    width: 60%;
+    margin-left: 20%
+}
+.right-bar{
+    padding: 15px;
+    float: left;
+    border: 1px solid black;
+    width: 15%;
+}
+.left-bar{
+    padding: 15px;
+    float: left;
+    border: 1px solid black;
+    width: 25%;
+
+}
+
+
+.all {
+  padding: 15px;
+  row-gap: 20px;
+  width: 25%;
+  float: left;
+  border: 1px solid black;
+  height: 20%;
+  }
