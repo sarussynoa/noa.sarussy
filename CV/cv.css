@@ -11,17 +11,81 @@ body {
 
 .grid-container {
     position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    grid-gap: 20px 20px;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    column-gap: 10px;
+    row-gap: 10px;
 }
 
-.header, .contact-me, .objective, .education, .professional-experience {
+.header {
   border: 1px solid black;
   padding: 15px;
-  row-gap: 20px;
+  column-gap: 10px;
+  row-gap: 10px;
+  text-align: center;
+}
+
+.contact-me {
+  border: 1px solid black;
+  padding: 15px;
+  column-gap: 10px;
+  row-gap: 10px;
+  text-align: center;
+}
+
+.objective-title {
+  width: 10%;
+  float: left;
+  border: 1px solid black;
+  padding: 15px;
+  column-gap: 10px;
+  row-gap: 10px;
+  height: 10%;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.objective {
+  width: 90%;
+  float: left;
+  border: 1px solid black;
+  padding: 15px;
+  column-gap: 10px;
+  row-gap: 10px;
+  height: 10%;
+}
+
+.education-title {
+  width: 10%;
+  float: left;
+  border: 1px solid black;
+  padding: 15px;
+  column-gap: 10px;
+  row-gap: 10px;
+  height: 10%;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.education {
+  width: 90%;
+  float: left;
+  border: 1px solid black;
+  padding: 15px;
+  column-gap: 10px;
+  row-gap: 10px;
+  height: 10%;
+}
+
+.professional-experience {
+  border: 1px solid black;
+  padding: 15px;
+  column-gap: 10px;
+  row-gap: 10px;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .year-1, .year-2 {
