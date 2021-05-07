@@ -327,4 +327,30 @@ img {
   background: #fff;
 }
 
+.contacts {
+    float: left;
+    border: 1px solid black;
+    padding: 15px;
+    grid-column: 1 / 2;
+    grid-row: 9 / 10;
+    background-color: #675599;
+    font-size: 35px;
+    color: #000000;
+    text-align: center;
+    font-weight: bold;
+}
+
+.contacts-list {
+    float: left;
+    border: 1px solid black;
+    padding: 15px;
+    background-color: #675599;
+    font-size: 35px;
+    color: #000000;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
 
