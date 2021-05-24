@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assignment-8.css') }}">
+    <script src="{{ url_for('static', filename='assignment-8.js') }}"></script>
+</head>
+
+<body>
+{% include 'header.html' %}
+<div class="grid-container">
+        <div class="trips" id="trips">
+            <h3>{{ "trips" | capitalize }}</h3>
+            <p>
+                In Israel and around the world<br>
+                Here are some memories from my best trips:
+            </p>
+            <div id="myBtnContainer">
+              <button class="btn active" onclick="filterSelection('all')">Show all</button>
+              <button class="btn" onclick="filterSelection('India')">India</button>
+              <button class="btn" onclick="filterSelection('Thailand')">Thailand</button>
+              <button class="btn" onclick="filterSelection('Israel')">Israel</button>
+            </div>
+
+            <div class="container">
+                <div class="filterDiv India">
+                    <img src="{{ url_for('static', filename='canacona.jpeg') }}" alt="Goa">
+                    <img src="{{ url_for('static', filename='goa.jpeg') }}" alt="Goa"><br>
+                    <img src="{{ url_for('static', filename='kasol.jpeg') }}" alt="Kasol"><br>
+                    <img src="{{ url_for('static', filename='manali.JPG') }}" alt="Manali"><br>
+                    <img src="{{ url_for('static', filename='pangong.JPG') }}" alt="Pangong"><br>
+                    <img src="{{ url_for('static', filename='pushkar.jpeg') }}" alt="Pushkar"><br>
+                </div>
+
+                <div class="filterDiv Thailand">
+                    <img src="{{ url_for('static', filename='chang-mai.jpeg') }}" alt="Chang Mai">
+                    <img src="{{ url_for('static', filename='chang-rai.jpeg') }}" alt="Chang Rai">
+                    <img src="{{ url_for('static', filename='koh-phangan.jpeg') }}" alt="Koh Phangan">
+                    <img src="{{ url_for('static', filename='koh-samui.jpeg') }}" alt="Koh Samui">
+                    <img src="{{ url_for('static', filename='phuket.jpeg') }}" alt="Phuket">
+                </div>
+
+                <div class="filterDiv Israel">
+                    <img src="{{ url_for('static', filename='ein-akev.jpeg') }}" alt="Ein Akev">
+                    <img src="{{ url_for('static', filename='kfar-blum.jpeg') }}" alt="Kfar Blum">
+                    <img src="{{ url_for('static', filename='sea-of-galilee.jpeg') }}" alt="Sea of Galilee">
+                    <img src="{{ url_for('static', filename='tel-gezer.jpeg') }}" alt="Tel Gezer">
+                </div>
+            </div>
+        </div>
+
+        <div class="jewelry" id="jewelry">
+            <h3>{{ "jewelry" | capitalize }}</h3>
+            <p>
+                I enjoy making jewelry,<br>
+                I'm taking some online courses,<br>
+                and planing to study in design school.
+                <img src="{{ url_for('static', filename='jewelry-1.jpeg') }}" alt="1">
+                <img src="{{ url_for('static', filename='jewelry-2.jpeg') }}" alt="2">
+                <img src="{{ url_for('static', filename='jewelry-3.jpeg') }}" alt="3">
+                <img src="{{ url_for('static', filename='jewelry-4.jpeg') }}" alt="4">
+            </p>
+        </div>
+
+        <div class="macrame" id="macrame">
+            <h3>{{ "macrame" | capitalize }}</h3>
+            <p>
+                I am doing macrame art pieces,<br>
+                like laptop cases, wall arts, plants hangers, etc...
+                <img src="{{ url_for('static', filename='wall-art.JPG') }}" alt="Wall Art">
+                <img src="{{ url_for('static', filename='laptop-case.jpeg') }}" alt="Laptop Case">
+                <img src="{{ url_for('static', filename='laptop-case-full.jpeg') }}" alt="Laptop Case">
+                <img src="{{ url_for('static', filename='plant-hanger.jpeg') }}" alt="Plant Hanger">
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

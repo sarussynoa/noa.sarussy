@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Noa Sarussy - CV</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cv.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='popup.css') }}">
+    <script src="{{ url_for('static', filename='cv.js') }}"></script>
+</head>
+
+<body>
+    <div class="grid-container">
+        {% include 'header.html' %}
+
+        <div class="objective-title">
+            Objective
+        </div>
+
+        <div class="objective">
+            A creative, reliable and highly motivated Industrial-engineering and management student,
+            is seeking a student's position in the world of product management or data analysis,
+            in a productive and professional environment.
+        </div>
+
+        <div class="education-title">
+            Education
+        </div>
+
+        <div class="education-years">
+            2016 - Present:
+        </div>
+
+        <div class="education">
+            B.Sc in Industrial-engineering and management at Ben-Gurion University.
+        </div>
+
+        <div class="professional-experience">
+            Professional Experience
+        </div>
+
+        <div class="year-1">
+            2018 - Current:
+        </div>
+
+        <div class="job-1">
+            Manual QA tester, K Health
+            <ul class="list">
+                <li>Testing mobile application on iOS and android, in a variety of devices</li>
+                <li>Arranging bugs ticketing on Jira</li>
+                <li>Collaborating with 3rd party testing services</li>
+                <li>Testing analytics on client side and server side, in several platforms such as xCode, Firebase,
+                    Keen, Big Query, etc</li>
+            </ul>
+        </div>
+
+        <div class="year-2">
+            2013 - 2015:
+        </div>
+
+        <div class="job-2">
+            Branch manager in "The Scouts" movement, Omer
+            <ul class="list">
+                <li>Taking care of all the logistics of daily activities and yearly projects (ceremonies, trips, camps,
+                    etc...)</li>
+                <li>Managing and escorting the young management team</li>
+                <li>Taking charge for over 500 children</li>
+                <li>Being the contact person for parents, school team and municipal workers</li>
+            </ul>
+        </div>
+
+        <div class="military-title">
+            Military Service
+        </div>
+
+        <div class="military-years">
+            2010 - 2012:
+        </div>
+
+        <div class="military">
+            Combat support service as a driving instructor on "Achzarit", an armored
+            vehicle
+            <ul class="list">
+                <li>Teaching and training combat soldiers</li>
+                <li>Qualifying new instructors</li>
+                <li>Managing commanders' instructors team</li>
+            </ul>
+        </div>
+
+        <div class="skills-and-capabilities">
+            Skills and Capabilities:
+            <ul class="list">
+                <li>java programming – academic level</li>
+                <li>Theoretical knowledge in CRM system – academic level</li>
+                <li>Experience in working with ERP system</li>
+            </ul>
+        </div>
+
+        <div class="contact-title">
+            Contact Me :)
+        </div>
+
+        <div class="contact-form">
+            <form 
+                method=”POST”
+                action="”mailto:noa.sarussy@gmail.com”"
+                onsubmit="toggleModal(event)"
+                enctype=”multipart/form-data” 
+                name=”contact-form”
+            >
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" required>
+                <label for="email">Phone</label>
+                <input type="text" name="phone" id="phone">
+                <textarea type="text" id="subject" name="subject" placeholder="Your text here..."></textarea>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <div class="contact-me">
+            noa.sarussy@gmail.com<br>
+            054-5773865<br>
+            My LinkedIn profile
+            <a href="https://www.linkedin.com/in/noa-sarussy-232762176/">
+                <img src="{{ url_for('static', filename='LinkedIn.svg') }}" alt="LinkedIn profile">
+            </a>
+            <br>
+            My CV
+            <a href="{{ url_for('static', filename='Noa-Sarussy-CV.pdf') }}" download>
+                <img src="{{ url_for('static', filename='PDF-file-icon.svg') }}" alt="CV download">
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="popup" class="confirm-popup">
+        <div>
+            <h2>Thanks</h2>
+            <p>Email sent</p>
+            <button onclick="toggleModal(event)"> close </button>
+        </div>
+    </div>
+    <!-- /Modal -->
+
+    <div class="contacts">
+        <a href="contacts-list">Contacts List</a>
+    </div>
+
+</body>
+
+</html>
