@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Contacts List</title>
-    <link rel="stylesheet" href="../static/cv.css">
-    <script src="../static/cv.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cv.css') }}">
+    <script src="{{ url_for('static', filename='cv.js') }}"></script>
 </head>
 
 <body onload="getUsers('contacts-list')">
