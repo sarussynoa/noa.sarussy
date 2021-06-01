@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Forms</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='assignment9.css') }}">
-    <script src="{{ url_for('static', filename='assignment9.js') }}"></script>
 </head>
 
 <body>
@@ -13,35 +12,56 @@
 <div class="grid-container">
         <div class="search-form">
             <h3>Search For Users</h3>
-            <form name="search" method=GET" action="assignment9">
-                <input name="firstname" type="text" id="firstname" placeholder="Enter first name here...">
-                <input name="lastname" type="text" id="lastname" placeholder="Enter last name here...">
-                <input name="email" type="text" id="email" placeholder="Enter email...">
+            <h4>Please submit one or more of the following details:</h4>
+
+            <form name="search" method="GET" action="assignment9">
+                <label>First Name</label>
+                <input name="firstname" type="text" id="firstname" placeholder="Enter first name..." size="25"><br>
+                <label>Last Name</label>
+                <input name="lastname" type="text" id="lastname" placeholder="Enter last name..." size="25"><br>
+                <label>Email</label>
+                <input name="email" type="text" id="email" placeholder="Enter email..." size="25"><br>
                 <input type="submit" value="search">
             </form>
+            {% if search %}
+                {% if found %}
+                    <h4>User found:</h4>
+                    <br>
+                    <span>
+                        {{res[0].firstname}} {{ res[0].lastname }}, email address: {{ res[0].email}}
+                    </span>
+                {% elif found==False %}
+                    <h4>User not found</h4>
+                {% else %}
+                    <h2>Users:</h2>
+                    <ol>
+                        {% for user in users %}
+                            <li>
+                                User: {{ user.firstname }} {{ user.lastname }}, email: {{ user.email }}
+                            </li>
 
-
-
+                        {% endfor %}
+                    </ol>
+                {% endif %}
+            {% endif %}
         </div>
 
-
-    {% block search %}
-    <h2>To search, please enter the username</h2>
-    <form name="search" method=GET" action="assignment9">
-        <input name="username" type="text" id="username" placeholder="enter username...">
-        <input name="lastname" type="text" id="lastname" placeholder="enter lastname...">
-        <input name="email" type="text" id="email" placeholder="enter email...">
-        <input type="submit" value="search">
-    </form>
-
-
-
-
-
-
-        <div class="registration-form" id="macrame">
+        {%if not session['isLogged']%}
+        <div class="registration-form">
             <h3>Registration Form</h3>
+            <form name="register" method="POST" action="assignment9">
+                <input name="username" type="text" placeholder="Enter your username here..." size="25"><br>
+                <input type="submit" value="register">
+            </form>
         </div>
+        {% else %}
+        <div class="logged-in">
+            <h3>Logged in as {{ session['username'] }}</h3>
+            <form name="logout" action="logout">
+                <input type="submit" value="Logout">
+            </form>
+        </div>
+        {% endif %}
     </div>
 </body>
 

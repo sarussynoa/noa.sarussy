@@ -1,1 +1,9 @@
-<div class="header">Noa Sarussy - CV</div>
+<div class="header">
+    Noa Sarussy - CV
+    <br>
+    {% if session['isLogged'] %}
+        Hey {{session['username']}}!
+    {% else %}
+        Hey guest!
+    {% endif %}
+</div>
