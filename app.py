@@ -18,5 +18,10 @@ def assignment8():
     return render_template('template.html', title='Hobbies')
 
 
+@app.route('/assignment9', methods=['GET'])
+def assignment9():
+    return render_template('assignment9.html')
+
+
 if __name__ == '__main__':
     app.run('localhost', '5555', debug=True)

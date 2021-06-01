@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assignment9.css') }}">
+    <script src="{{ url_for('static', filename='assignment9.js') }}"></script>
+</head>
+
+<body>
+{% include 'header.html' %}
+<div class="grid-container">
+        <div class="search-form">
+            <h3>Search For Users</h3>
+            <form name="search" method=GET" action="assignment9">
+                <input name="firstname" type="text" id="firstname" placeholder="Enter first name here...">
+                <input name="lastname" type="text" id="lastname" placeholder="Enter last name here...">
+                <input name="email" type="text" id="email" placeholder="Enter email...">
+                <input type="submit" value="search">
+            </form>
+
+
+
+        </div>
+
+
+    {% block search %}
+    <h2>To search, please enter the username</h2>
+    <form name="search" method=GET" action="assignment9">
+        <input name="username" type="text" id="username" placeholder="enter username...">
+        <input name="lastname" type="text" id="lastname" placeholder="enter lastname...">
+        <input name="email" type="text" id="email" placeholder="enter email...">
+        <input type="submit" value="search">
+    </form>
+
+
+
+
+
+
+        <div class="registration-form" id="macrame">
+            <h3>Registration Form</h3>
+        </div>
+    </div>
+</body>
+
+</html>

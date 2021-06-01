@@ -1,0 +1,92 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 20px;
+  padding: 10px;
+  position: absolute;
+}
+
+
+
+.trips {
+  height: 85vh;
+  overflow: scroll;
+  border: 1px solid black;
+  padding: 15px;
+  text-align: center;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  background-color: #51417E;
+  font-size: 30px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.jewelry {
+  height: 85vh;
+  overflow: scroll;
+  border: 1px solid black;
+  padding: 15px;
+  text-align: center;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  background-color: #51417E;
+  font-size: 30px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+img {
+  width: 30%
+}
+
+.filterDiv {
+  float: left;
+  background-color: none;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+  margin: 2px;
+  display: none; /* Hidden by default */
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Add a light grey background on mouse-over */
+.btn:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background to the active button */
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+img {
+    width:70%;
+}
+
+.header {
+  border: 1px solid black;
+  padding: 15px;
+  text-align: center;
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
+  background-color: #51417E;
+  font-size: 30px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
