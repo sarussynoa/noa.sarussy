@@ -1,7 +1,23 @@
 from flask import Flask, render_template, url_for, session, request, redirect
+import mysql.connector
+from settings import config
+from utilities.db.db_manager import dbManager
+
+from pages.assignment10.assignment10 import assignment10
+
+# def q2(query, val=None):
+#     cnx = mysql.connector.connect(**config)
+#     cursor = cnx.cursor()
+#     cursor.execute(query, val)
+#     cnx.commit()
+#     data = cursor.fetchall()
+#     cnx.close()
+#     return data
+
 
 app = Flask(__name__)
 app.secret_key = "mySecretKey"
+app.register_blueprint(assignment10)
 
 users = [{'firstname': 'noa', 'lastname': 'sarussy', 'email': 'noasarussy@gmail.com'},
          {'firstname': 'asaf', 'lastname': 'lotz', 'email': 'asaflotz@gmail.com'},
@@ -36,7 +52,8 @@ def assignment9():
                 return render_template('assignment9.html', search=True, users=users)
             res = []
             for user in users:
-                if username in ['', user['firstname']] and lastname in ['', user['lastname']] and email in ['', user['email']]:
+                if username in ['', user['firstname']] and lastname in ['', user['lastname']] and email in ['', user[
+                    'email']]:
                     res.append(user)
             if res:
                 return render_template('assignment9.html', search=True, found=True, res=res)
