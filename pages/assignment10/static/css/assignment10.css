@@ -1,7 +1,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: 33% 33% auto;
-  grid-gap: 20px;
+  grid-gap: 10px;
   padding: 10px;
   position: absolute;
   width: 98%;
@@ -59,13 +59,13 @@
 }
 
 .message {
-  padding: 15px;
+  padding: 1px;
   text-align: center;
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   background-color: #51417E;
-  font-size: 25px;
-  color: #FFFFFF;
+  font-size: 10px;
+  color: red;
 }
 
 img {

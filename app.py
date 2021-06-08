@@ -1,19 +1,6 @@
 from flask import Flask, render_template, url_for, session, request, redirect
-import mysql.connector
-from settings import config
-from utilities.db.db_manager import dbManager
 
 from pages.assignment10.assignment10 import assignment10
-
-# def q2(query, val=None):
-#     cnx = mysql.connector.connect(**config)
-#     cursor = cnx.cursor()
-#     cursor.execute(query, val)
-#     cnx.commit()
-#     data = cursor.fetchall()
-#     cnx.close()
-#     return data
-
 
 app = Flask(__name__)
 app.secret_key = "mySecretKey"
@@ -77,4 +64,4 @@ def logout():
 
 
 if __name__ == '__main__':
-    app.run('localhost', '5555', debug=True)
+    app.run('localhost', 5555, debug=True)
