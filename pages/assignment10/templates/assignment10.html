@@ -3,65 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <title>Assignment 10</title>
+    <link rel="stylesheet" href="{{ url_for('assignment10.static', filename='css/assignment10.css') }}">
 </head>
+
 <body>
-    {% if action == 'select' %}
-        <h1> hey! </h1>
-    {% elif action == 'insert' %}
-        <h1>{{res}} row(s) inserted</h1>
-    {% elif action == 'update' %}
-        <h1>{{res}} row(s) updated</h1>
-    {% elif action == 'delete' %}
-        <h1>{{res}} row(s) deleted</h1>
-    {% endif %}
-    <form name="insert" method="POST" action="assignment10">
-        <h1>Add new</h1>
-        firstname: <input name="firstname" type="text" size="25"><br>
-        lastname: <input name="lastname" type="text" size="25"><br>
-        email: <input name="email" type="text" size="25"><br>
-        <input name="type" value="insert" type="hidden">
+{% include 'header.html' %}
+    <div class="grid-container">
 
-        <input type="submit" value="Add">
-    </form>
-    <br>
-    <form name="update" method="POST" action="assignment10">
-        <h1>Update by id</h1>
-        id: <input name="id" type="number"><br>
-        firstname: <input name="firstname" type="text" size="25"><br>
-        lastname: <input name="lastname" type="text" size="25"><br>
-        email: <input name="email" type="text" size="25"><br>
-        <input name="type" value="update" type="hidden">
-        <input type="submit" value="Edit">
-    </form>
+        <div class="insert">
+            <form name="insert" method="POST" action="assignment10">
+                <h1>Add new</h1>
+                firstname: <input name="firstname" type="text" size="25"><br>
+                lastname: <input name="lastname" type="text" size="25"><br>
+                email: <input name="email" type="text" size="25"><br>
+                <input name="type" value="insert" type="hidden">
 
-    <form name="delete" method="POST" action="assignment10">
-        <h1>Delete</h1>
-        id: <input name="id" type="number"><br>
-        firstname: <input name="firstname" type="text" size="25"><br>
-        lastname: <input name="lastname" type="text" size="25"><br>
-        email: <input name="email" type="text" size="25"><br>
-        <input name="type" value="delete" type="hidden">
-        <input type="submit" value="Delete">
-    </form>
+                <input type="submit" value="Add">
+            </form>
+        </div>
 
-{% if users %}
-    <h2>Users:</h2>
-        <table>
-            <tr>
-                <th>id</th>
-                <th>firstname</th>
-                <th>lastname</th>
-                <th>email</th>
-            </tr>
-            {% for user in users %}
-                <tr>
-                    <td>{{ user.id }}</td>
-                    <td>{{ user.firstname }}</td>
-                    <td>{{ user.lastname }}</td>
-                    <td>{{ user.email }}</td>
-                </tr>
-            {% endfor %}
-        </table>
-{% endif %}
+        <div class="update">
+            <form name="update" method="POST" action="assignment10">
+                <h1>Update by id</h1>
+                id: <input name="id" type="number"><br>
+                firstname: <input name="firstname" type="text" size="25"><br>
+                lastname: <input name="lastname" type="text" size="25"><br>
+                email: <input name="email" type="text" size="25"><br>
+                <input name="type" value="update" type="hidden">
+                <input type="submit" value="Edit">
+            </form>
+        </div>
+
+        <div class="delete">
+            <form name="delete" method="POST" action="assignment10">
+                <h1>Delete</h1>
+                id: <input name="id" type="number"><br>
+                firstname: <input name="firstname" type="text" size="25"><br>
+                lastname: <input name="lastname" type="text" size="25"><br>
+                email: <input name="email" type="text" size="25"><br>
+                <input name="type" value="delete" type="hidden">
+                <input type="submit" value="Delete">
+            </form>
+        </div>
+
+    <div class="users">
+        <div class="message">
+            {% if action == 'select' %}
+            {% elif action == 'insert' %}
+                <h1>{{res}} row(s) inserted</h1>
+            {% elif action == 'update' %}
+                <h1>{{res}} row(s) updated</h1>
+            {% elif action == 'delete' %}
+                <h1>{{res}} row(s) deleted</h1>
+            {% endif %}
+        </div>
+
+        {% if users %}
+            <h2>Users:</h2>
+                <table>
+                    <tr>
+                        <th>id</th>
+                        <th>firstname</th>
+                        <th>lastname</th>
+                        <th>email</th>
+                    </tr>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{ user.id }}</td>
+                            <td>{{ user.firstname }}</td>
+                            <td>{{ user.lastname }}</td>
+                            <td>{{ user.email }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+        {% endif %}
+        <br>
+        </div>
+    </div>
 </body>
 </html>

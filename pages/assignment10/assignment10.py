@@ -12,6 +12,7 @@ assignment10 = Blueprint(
 
 @assignment10.route('/assignment10', methods=['GET', 'POST'])
 def index():
+    data = 0
     current_method = request.method
 
     if current_method == 'GET':
@@ -22,12 +23,13 @@ def index():
             # insert query
             sql = 'insert into users (firstname, lastname, email) values (%s, %s, %s)'
             val = (request.form.get('firstname') or '', request.form.get('lastname') or '', request.form.get('email') or '')
-            data = dbManager.commit(sql, val)
+            if True in [x != '' for x in val]:
+                data = dbManager.commit(sql, val)
             return render_template('assignment10.html', action='insert', res=data, users=dbManager.get_all_users())
 
         elif request.form['type'] == 'update':
             # update query
-            data, c = 0, 0
+            c = 0
             sql = 'update users'
             val = ()
             for arg in request.form:
@@ -48,16 +50,19 @@ def index():
 
         elif request.form['type'] == 'delete':
             # delete query
+            c = 0
             sql = 'delete from users'
             val = ()
             for arg in request.form:
                 if not request.form[arg] or arg == 'type':
                     continue
+                c += 1
                 if 'where' in sql:
                     sql += ' and'
                 else:
                     sql += ' where'
                 sql += f' {arg} = %s'
                 val += (request.form[arg],)
-            data = dbManager.commit(sql, val)
+            if c:
+                data = dbManager.commit(sql, val)
             return render_template('assignment10.html', action='delete', users=dbManager.get_all_users(), res=data)
