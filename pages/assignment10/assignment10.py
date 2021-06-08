@@ -10,7 +10,7 @@ assignment10 = Blueprint(
 )
 
 
-@assignment10.route('/assignment10', methods=['GET', 'POST', 'PUT', 'DELETE'])
+@assignment10.route('/assignment10', methods=['GET', 'POST'])
 def index():
     current_method = request.method
 
