@@ -2,6 +2,9 @@ from flask import Flask, render_template, url_for, session, request, redirect
 
 from pages.assignment10.assignment10 import assignment10
 
+from utilities.db.db_manager import dbManager
+import json
+
 app = Flask(__name__)
 app.secret_key = "mySecretKey"
 app.register_blueprint(assignment10)
@@ -61,6 +64,29 @@ def logout():
     session['username'] = ''
     session['isLogged'] = False
     return redirect(url_for('assignment9'))
+
+
+@app.route('/assignment11/users', methods=['GET'])
+def ass11():
+    return json.dumps(dbManager.get_all_users())
+
+
+@app.route('/assignment11/users/selected/<int:user_id>', methods=['GET'])
+def ass11_selected(user_id):
+    u = dbManager.get_user(user_id)
+    if len(u) > 0:
+        return json.dumps(u[0])
+    else:
+        return json.dumps({"error": "user not found"})
+
+
+@app.route('/assignment11/users/selected', methods=['GET'])
+def ass11_selected_none():
+    u = dbManager.get_all_users()
+    if len(u) > 0:
+        return json.dumps(u[-1])
+    else:
+        return json.dumps({"error": "no users in database"})
 
 
 if __name__ == '__main__':

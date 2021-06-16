@@ -72,6 +72,14 @@ class DBManager:
             users.append({'id': row.id, 'firstname': row.firstname, 'lastname': row.lastname, 'email': row.email})
         return users
 
+    def get_user(self, user_id):
+        users = []
+        query = f'select * from users where id = {user_id}'
+        data = self.fetch(query)
+        for row in data:
+            users.append({'id': row.id, 'firstname': row.firstname, 'lastname': row.lastname, 'email': row.email})
+        return users
+
 
 # Creates an instance for the DBManager class for export.
 dbManager = DBManager()
